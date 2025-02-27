@@ -8,12 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		E69911E42D70A99D00EA4134 /* DiplomaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69911E32D70A99D00EA4134 /* DiplomaApp.swift */; };
-		E69911E62D70A99D00EA4134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69911E52D70A99D00EA4134 /* ContentView.swift */; };
 		E69911E82D70A99F00EA4134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69911E72D70A99F00EA4134 /* Assets.xcassets */; };
 		E69911EB2D70A99F00EA4134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69911EA2D70A99F00EA4134 /* Preview Assets.xcassets */; };
 		E69911F52D70A99F00EA4134 /* DiplomaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69911F42D70A99F00EA4134 /* DiplomaTests.swift */; };
 		E69911FF2D70A99F00EA4134 /* DiplomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69911FE2D70A99F00EA4134 /* DiplomaUITests.swift */; };
 		E69912012D70A99F00EA4134 /* DiplomaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912002D70A99F00EA4134 /* DiplomaUITestsLaunchTests.swift */; };
+		E69912762D70ABBF00EA4134 /* SSLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912752D70ABBF00EA4134 /* SSLClient.swift */; };
+		E69912772D70ABBF00EA4134 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912742D70ABBF00EA4134 /* GoogleManager.swift */; };
+		E699128F2D70AC0900EA4134 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E699128E2D70AC0900EA4134 /* Info.plist */; };
+		E69912AD2D70AC8500EA4134 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = E69912AC2D70AC8500EA4134 /* config.json */; };
+		E69912D72D70ACC400EA4134 /* ca.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912C92D70ACC400EA4134 /* ca.crt */; };
+		E69912D82D70ACC400EA4134 /* ca.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912CA2D70ACC400EA4134 /* ca.key */; };
+		E69912D92D70ACC400EA4134 /* ca.srl in Resources */ = {isa = PBXBuildFile; fileRef = E69912CB2D70ACC400EA4134 /* ca.srl */; };
+		E69912DA2D70ACC400EA4134 /* client_certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = E69912CC2D70ACC400EA4134 /* client_certificate.p12 */; };
+		E69912DB2D70ACC400EA4134 /* client.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912CD2D70ACC400EA4134 /* client.crt */; };
+		E69912DC2D70ACC400EA4134 /* client.csr in Resources */ = {isa = PBXBuildFile; fileRef = E69912CE2D70ACC400EA4134 /* client.csr */; };
+		E69912DD2D70ACC400EA4134 /* client.ext in Resources */ = {isa = PBXBuildFile; fileRef = E69912CF2D70ACC400EA4134 /* client.ext */; };
+		E69912DE2D70ACC400EA4134 /* client.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912D02D70ACC400EA4134 /* client.key */; };
+		E69912DF2D70ACC400EA4134 /* server.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912D12D70ACC400EA4134 /* server.crt */; };
+		E69912E02D70ACC400EA4134 /* server.csr in Resources */ = {isa = PBXBuildFile; fileRef = E69912D22D70ACC400EA4134 /* server.csr */; };
+		E69912E12D70ACC400EA4134 /* server.ext in Resources */ = {isa = PBXBuildFile; fileRef = E69912D32D70ACC400EA4134 /* server.ext */; };
+		E69912E22D70ACC400EA4134 /* server.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912D42D70ACC400EA4134 /* server.key */; };
+		E69912E32D70ACC400EA4134 /* server.pem in Resources */ = {isa = PBXBuildFile; fileRef = E69912D52D70ACC400EA4134 /* server.pem */; };
+		E69912E72D70ACE000EA4134 /* ContentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E42D70ACE000EA4134 /* ContentListViewModel.swift */; };
+		E69912E82D70ACE000EA4134 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E52D70ACE000EA4134 /* LoginViewModel.swift */; };
+		E69912EF2D70ACFB00EA4134 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E92D70ACFA00EA4134 /* Content.swift */; };
+		E69912F02D70ACFB00EA4134 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EA2D70ACFA00EA4134 /* Metadata.swift */; };
+		E69912F12D70ACFB00EA4134 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EB2D70ACFA00EA4134 /* Stack.swift */; };
+		E69912F22D70ACFB00EA4134 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */; };
+		E69912F32D70ACFB00EA4134 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912ED2D70ACFA00EA4134 /* User.swift */; };
+		E69912FF2D70AD1100EA4134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69912F42D70AD1100EA4134 /* Preview Assets.xcassets */; };
+		E69913002D70AD1100EA4134 /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912F62D70AD1100EA4134 /* ChangeNameView.swift */; };
+		E69913012D70AD1100EA4134 /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912F72D70AD1100EA4134 /* ContentListView.swift */; };
+		E69913022D70AD1100EA4134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912F82D70AD1100EA4134 /* ContentView.swift */; };
+		E69913032D70AD1100EA4134 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912F92D70AD1100EA4134 /* CreateFolderView.swift */; };
+		E69913042D70AD1100EA4134 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912FA2D70AD1100EA4134 /* LoginView.swift */; };
+		E69913052D70AD1100EA4134 /* PreviewPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912FB2D70AD1100EA4134 /* PreviewPhotoView.swift */; };
+		E69913062D70AD1100EA4134 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912FC2D70AD1100EA4134 /* ProfileView.swift */; };
+		E69913072D70AD1100EA4134 /* SlidingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */; };
+		E69913092D70AD4100EA4134 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E69913082D70AD4100EA4134 /* GoogleSignIn */; };
+		E699130B2D70AD4100EA4134 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E699130A2D70AD4100EA4134 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +70,6 @@
 /* Begin PBXFileReference section */
 		E69911E02D70A99D00EA4134 /* Diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69911E32D70A99D00EA4134 /* DiplomaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomaApp.swift; sourceTree = "<group>"; };
-		E69911E52D70A99D00EA4134 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E69911E72D70A99F00EA4134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E69911EA2D70A99F00EA4134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E69911F02D70A99F00EA4134 /* DiplomaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiplomaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +77,39 @@
 		E69911FA2D70A99F00EA4134 /* DiplomaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiplomaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69911FE2D70A99F00EA4134 /* DiplomaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomaUITests.swift; sourceTree = "<group>"; };
 		E69912002D70A99F00EA4134 /* DiplomaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E69912742D70ABBF00EA4134 /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
+		E69912752D70ABBF00EA4134 /* SSLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLClient.swift; sourceTree = "<group>"; };
+		E699128E2D70AC0900EA4134 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69912AC2D70AC8500EA4134 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		E69912C92D70ACC400EA4134 /* ca.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.crt; sourceTree = "<group>"; };
+		E69912CA2D70ACC400EA4134 /* ca.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.key; sourceTree = "<group>"; };
+		E69912CB2D70ACC400EA4134 /* ca.srl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.srl; sourceTree = "<group>"; };
+		E69912CC2D70ACC400EA4134 /* client_certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client_certificate.p12; sourceTree = "<group>"; };
+		E69912CD2D70ACC400EA4134 /* client.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.crt; sourceTree = "<group>"; };
+		E69912CE2D70ACC400EA4134 /* client.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.csr; sourceTree = "<group>"; };
+		E69912CF2D70ACC400EA4134 /* client.ext */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.ext; sourceTree = "<group>"; };
+		E69912D02D70ACC400EA4134 /* client.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.key; sourceTree = "<group>"; };
+		E69912D12D70ACC400EA4134 /* server.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.crt; sourceTree = "<group>"; };
+		E69912D22D70ACC400EA4134 /* server.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.csr; sourceTree = "<group>"; };
+		E69912D32D70ACC400EA4134 /* server.ext */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.ext; sourceTree = "<group>"; };
+		E69912D42D70ACC400EA4134 /* server.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.key; sourceTree = "<group>"; };
+		E69912D52D70ACC400EA4134 /* server.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.pem; sourceTree = "<group>"; };
+		E69912E42D70ACE000EA4134 /* ContentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentListViewModel.swift; sourceTree = "<group>"; };
+		E69912E52D70ACE000EA4134 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E69912E92D70ACFA00EA4134 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		E69912EA2D70ACFA00EA4134 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		E69912EB2D70ACFA00EA4134 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		E69912ED2D70ACFA00EA4134 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E69912F42D70AD1100EA4134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E69912F62D70AD1100EA4134 /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		E69912F72D70AD1100EA4134 /* ContentListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
+		E69912F82D70AD1100EA4134 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E69912F92D70AD1100EA4134 /* CreateFolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
+		E69912FA2D70AD1100EA4134 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E69912FB2D70AD1100EA4134 /* PreviewPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoView.swift; sourceTree = "<group>"; };
+		E69912FC2D70AD1100EA4134 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69913092D70AD4100EA4134 /* GoogleSignIn in Frameworks */,
+				E699130B2D70AD4100EA4134 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +142,9 @@
 		E69911D72D70A99D00EA4134 = {
 			isa = PBXGroup;
 			children = (
+				E69912D62D70ACC400EA4134 /* keys */,
+				E69912AC2D70AC8500EA4134 /* config.json */,
+				E699128E2D70AC0900EA4134 /* Info.plist */,
 				E69911E22D70A99D00EA4134 /* Diploma */,
 				E69911F32D70A99F00EA4134 /* DiplomaTests */,
 				E69911FD2D70A99F00EA4134 /* DiplomaUITests */,
@@ -94,8 +165,11 @@
 		E69911E22D70A99D00EA4134 /* Diploma */ = {
 			isa = PBXGroup;
 			children = (
+				E69912FE2D70AD1100EA4134 /* Views */,
+				E69912EE2D70ACFA00EA4134 /* Entities */,
+				E69912E62D70ACE000EA4134 /* ViewModels */,
+				E69912732D70ABBF00EA4134 /* Models */,
 				E69911E32D70A99D00EA4134 /* DiplomaApp.swift */,
-				E69911E52D70A99D00EA4134 /* ContentView.swift */,
 				E69911E72D70A99F00EA4134 /* Assets.xcassets */,
 				E69911E92D70A99F00EA4134 /* Preview Content */,
 			);
@@ -127,6 +201,80 @@
 			path = DiplomaUITests;
 			sourceTree = "<group>";
 		};
+		E69912732D70ABBF00EA4134 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E69912742D70ABBF00EA4134 /* GoogleManager.swift */,
+				E69912752D70ABBF00EA4134 /* SSLClient.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E69912D62D70ACC400EA4134 /* keys */ = {
+			isa = PBXGroup;
+			children = (
+				E69912C92D70ACC400EA4134 /* ca.crt */,
+				E69912CA2D70ACC400EA4134 /* ca.key */,
+				E69912CB2D70ACC400EA4134 /* ca.srl */,
+				E69912CC2D70ACC400EA4134 /* client_certificate.p12 */,
+				E69912CD2D70ACC400EA4134 /* client.crt */,
+				E69912CE2D70ACC400EA4134 /* client.csr */,
+				E69912CF2D70ACC400EA4134 /* client.ext */,
+				E69912D02D70ACC400EA4134 /* client.key */,
+				E69912D12D70ACC400EA4134 /* server.crt */,
+				E69912D22D70ACC400EA4134 /* server.csr */,
+				E69912D32D70ACC400EA4134 /* server.ext */,
+				E69912D42D70ACC400EA4134 /* server.key */,
+				E69912D52D70ACC400EA4134 /* server.pem */,
+			);
+			path = keys;
+			sourceTree = "<group>";
+		};
+		E69912E62D70ACE000EA4134 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E69912E42D70ACE000EA4134 /* ContentListViewModel.swift */,
+				E69912E52D70ACE000EA4134 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E69912EE2D70ACFA00EA4134 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E69912E92D70ACFA00EA4134 /* Content.swift */,
+				E69912EA2D70ACFA00EA4134 /* Metadata.swift */,
+				E69912EB2D70ACFA00EA4134 /* Stack.swift */,
+				E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */,
+				E69912ED2D70ACFA00EA4134 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E69912F52D70AD1100EA4134 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E69912F42D70AD1100EA4134 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E69912FE2D70AD1100EA4134 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E69912F52D70AD1100EA4134 /* Preview Content */,
+				E69912F62D70AD1100EA4134 /* ChangeNameView.swift */,
+				E69912F72D70AD1100EA4134 /* ContentListView.swift */,
+				E69912F82D70AD1100EA4134 /* ContentView.swift */,
+				E69912F92D70AD1100EA4134 /* CreateFolderView.swift */,
+				E69912FA2D70AD1100EA4134 /* LoginView.swift */,
+				E69912FB2D70AD1100EA4134 /* PreviewPhotoView.swift */,
+				E69912FC2D70AD1100EA4134 /* ProfileView.swift */,
+				E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +291,10 @@
 			dependencies = (
 			);
 			name = Diploma;
+			packageProductDependencies = (
+				E69913082D70AD4100EA4134 /* GoogleSignIn */,
+				E699130A2D70AD4100EA4134 /* GoogleSignInSwift */,
+			);
 			productName = Diploma;
 			productReference = E69911E02D70A99D00EA4134 /* Diploma.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +367,9 @@
 				Base,
 			);
 			mainGroup = E69911D72D70A99D00EA4134;
+			packageReferences = (
+				E69912902D70AC1400EA4134 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = E69911E12D70A99D00EA4134 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +386,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69912E12D70ACC400EA4134 /* server.ext in Resources */,
+				E69912E32D70ACC400EA4134 /* server.pem in Resources */,
+				E69912DC2D70ACC400EA4134 /* client.csr in Resources */,
+				E69912DB2D70ACC400EA4134 /* client.crt in Resources */,
+				E69912DA2D70ACC400EA4134 /* client_certificate.p12 in Resources */,
+				E69912D82D70ACC400EA4134 /* ca.key in Resources */,
+				E69912DF2D70ACC400EA4134 /* server.crt in Resources */,
+				E69912DD2D70ACC400EA4134 /* client.ext in Resources */,
+				E69912FF2D70AD1100EA4134 /* Preview Assets.xcassets in Resources */,
+				E69912E02D70ACC400EA4134 /* server.csr in Resources */,
+				E69912E22D70ACC400EA4134 /* server.key in Resources */,
 				E69911EB2D70A99F00EA4134 /* Preview Assets.xcassets in Resources */,
+				E69912DE2D70ACC400EA4134 /* client.key in Resources */,
+				E69912D72D70ACC400EA4134 /* ca.crt in Resources */,
 				E69911E82D70A99F00EA4134 /* Assets.xcassets in Resources */,
+				E69912AD2D70AC8500EA4134 /* config.json in Resources */,
+				E69912D92D70ACC400EA4134 /* ca.srl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E699128F2D70AC0900EA4134 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +428,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E69911E62D70A99D00EA4134 /* ContentView.swift in Sources */,
+				E69912F02D70ACFB00EA4134 /* Metadata.swift in Sources */,
+				E69912E72D70ACE000EA4134 /* ContentListViewModel.swift in Sources */,
+				E69913012D70AD1100EA4134 /* ContentListView.swift in Sources */,
+				E69913042D70AD1100EA4134 /* LoginView.swift in Sources */,
+				E69912F22D70ACFB00EA4134 /* SwiftUIView.swift in Sources */,
+				E69913002D70AD1100EA4134 /* ChangeNameView.swift in Sources */,
 				E69911E42D70A99D00EA4134 /* DiplomaApp.swift in Sources */,
+				E69912772D70ABBF00EA4134 /* GoogleManager.swift in Sources */,
+				E69913052D70AD1100EA4134 /* PreviewPhotoView.swift in Sources */,
+				E69913062D70AD1100EA4134 /* ProfileView.swift in Sources */,
+				E69912F12D70ACFB00EA4134 /* Stack.swift in Sources */,
+				E69913032D70AD1100EA4134 /* CreateFolderView.swift in Sources */,
+				E69912E82D70ACE000EA4134 /* LoginViewModel.swift in Sources */,
+				E69912762D70ABBF00EA4134 /* SSLClient.swift in Sources */,
+				E69913022D70AD1100EA4134 /* ContentView.swift in Sources */,
+				E69912F32D70ACFB00EA4134 /* User.swift in Sources */,
+				E69913072D70AD1100EA4134 /* SlidingMenuView.swift in Sources */,
+				E69912EF2D70ACFB00EA4134 /* Content.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +611,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Diploma/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/macvejpazh/Documents/swift_proj/Diploma/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +641,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Diploma/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/macvejpazh/Documents/swift_proj/Diploma/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -582,6 +773,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E69912902D70AC1400EA4134 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E69913082D70AD4100EA4134 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E69912902D70AC1400EA4134 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		E699130A2D70AD4100EA4134 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E69912902D70AC1400EA4134 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E69911D82D70A99D00EA4134 /* Project object */;
 }
