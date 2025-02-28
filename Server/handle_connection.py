@@ -33,13 +33,13 @@ def handle_connection(ssl_client_socket: ssl.SSLSocket):
         body_data += ssl_client_socket.recv(content_length - len(body_data))
 
     # ? Expected body format
-    # {
-    #    "Type": "Group",
-    #    "Method": "Face" | "Date" | "Metadata"
-    #    "AccessToken" : - Access token from Google OAuth
-    #    "CurrentDirectory" : - Current directory in Google Drive
-    #    "Content": - List of file ids
-    # }
+    # * {
+    # *    "Type": "Group",
+    # *    "Method": "Face" | "Date" | "Metadata"
+    # *    "AccessToken" : - Access token from Google OAuth
+    # *    "CurrentDirectory" : - Current directory in Google Drive
+    # *    "Content": - List of file ids
+    # * }
 
     formatted_headers = headers.replace("\n", "\n\t")
     print(f"{colors().highlight('Received Headers:','blue')}\n\t{formatted_headers}")
@@ -58,21 +58,10 @@ def handle_connection(ssl_client_socket: ssl.SSLSocket):
 
                     {response_body}
                     """
-    ssl_client_socket.send(http_response.encode())
 
     body_data = json.loads(body_data.decode())
-    access_token = body_data["AccessToken"]
-    if access_token != None:
-        manager = GoogleManager()
-        images = manager.get_images(
-            access_token, body_data["Content"], work_dir)
-    else:
-        remove_files(work_dir)
-        return
-    group_photos(images,
-                 body_data['Content'],
-                 body_data['CurrentDirectory'],
-                 body_data['Method'])
-    # ! for debug:
-    input()
+    group_photos(body_data, work_dir)
+    ssl_client_socket.send(http_response.encode())
+
     remove_files(work_dir)
+    ssl_client_socket.close()

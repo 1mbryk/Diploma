@@ -4,6 +4,7 @@ import threading
 from utils import colors
 import utils
 from handle_connection import handle_connection
+import os
 
 # Define server address and port
 server_address = ("localhost", 8443)
@@ -20,10 +21,10 @@ context.load_cert_chain(certfile="../keys/server.crt",
 
 
 def main():
+    os.system('clear')
     # Bind the socket to the address and port
     sock.bind(server_address)
     sock.listen(5)
-
     threads = []
     while True:
         print(
