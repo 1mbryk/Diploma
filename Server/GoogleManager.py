@@ -77,6 +77,7 @@ class GoogleManager:
         if response.status_code == 200:
             return [x['id'] for x in response.json()["files"]]
         else:
+            print(f"{colors().highlight('Error', 'red')}: Failed get files")
             response.raise_for_status()
 
     def get_folder_id(self, folder_name):
@@ -92,6 +93,8 @@ class GoogleManager:
             files = response.json().get("files", [])
             return files[0]["id"] if files else None
         else:
+            print(
+                f"{colors().highlight('Error', 'red')}: Failed to get folder id'")
             return {"error": response.json(), "status_code": response.status_code}
 
     # * Setter methods
@@ -123,7 +126,6 @@ class GoogleManager:
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json"
         }
-
         params = {
             "addParents": new_parent_id,
             "removeParents": parents_id,
@@ -134,7 +136,11 @@ class GoogleManager:
         response = requests.patch(url, headers=headers, params=params)
 
         if response.status_code == 200:
+            print(
+                f"{colors().highlight('Successfully', 'green')} moved file '{file_id}'")
             return response.json()
         else:
             response.raise_for_status()
+            print(
+                f"{colors().highlight('Error', 'red')}: Failed to move file '{file_id}'")
             return {"error": response.json(), "status_code": response.status_code}

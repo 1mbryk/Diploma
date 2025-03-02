@@ -74,6 +74,7 @@ class ContentListViewModel : ObservableObject {
         }
         
         let image = await googleManager.downloadImage(from: pickedImageId)
+        // FIXME: EXC_BAD_ACCESS
         cachedImages[pickedImageId] = image
         return image
     }
@@ -233,6 +234,7 @@ class ContentListViewModel : ObservableObject {
                     return
                 }
                 print("Response: \(response!)")
+                self.getContent()
             }
         } catch {
             print("❌ Error serializing JSON: \(error)")

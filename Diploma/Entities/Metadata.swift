@@ -7,8 +7,23 @@ struct Metadata: Codable {
     var size: Int?
     var mimeType: String
     
-    // TODO: extend metadata to [width, height, cameraMake, cameraModel, exposureTime, aperture, focalLength, isoSpace, colorSpace, whiteBalance, lens]
-    init(id: String, name: String, mimeType: String, createdTime: Date,modifiedTime: Date, size: Int? = nil) {
+//    struct ImageMediaMetadata: Codable {
+//        var width: Int
+//        var height: Int
+//        var cameraMake: String?
+//        var cameraModel: String?
+//        var exposureTime: Float?
+//        var aperture: Float?
+//        var focalLength: Float?
+//        var isoSpeed: Int?
+//        var colorSpace: String?
+//        var whiteBalance: String?
+//        var lens: String?
+//    }
+//    var imageMediaMetadata: ImageMediaMetadata?
+    
+    // TODO: extend metadata to [width, height, cameraMake, cameraModel, exposureTime, aperture, focalLength, isoSpeed, colorSpace, whiteBalance, lens]
+    init(id: String, name: String, mimeType: String, createdTime: Date,modifiedTime: Date, size: Int? = nil/*, imageMediaMetadata: ImageMediaMetadata? = nil*/) {
         self.id = id
         self.name = name
         self.modifiedTime = modifiedTime
@@ -25,7 +40,9 @@ struct Metadata: Codable {
             self.mimeType = "Other"
             
         }
+//        self.imageMediaMetadata = imageMediaMetadata
     }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
@@ -55,5 +72,6 @@ struct Metadata: Codable {
         } else {
             throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.createdTime, CodingKeys.modifiedTime], debugDescription: "Invalid date format"))
         }
+//        self.imageMediaMetadata = ImageMediaMetadata(from: try container.decode(ImageMediaMetadata.self, forKey: .imageMediaMetadata))
     }
 }

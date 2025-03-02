@@ -28,7 +28,7 @@ def group_photos(body_data, work_dir):
                 date = image.createdTime.strftime("%d.%m.%Y")
                 if not folders.get(date):
                     folder_id = google_manager.get_folder_id(date)
-                    if not folder_id:
+                    if not folder_id:  # if not exist create
                         folder_id = google_manager.create_folder(date,
                                                                  current_dir)
                     folders[date] = folder_id
