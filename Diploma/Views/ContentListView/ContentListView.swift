@@ -57,13 +57,6 @@ struct ContentListView: View {
                 // MARK: - ON APPEAR
                 .onAppear {
                     print("⚠️ ContentListView is appear")
-                    if !viewModel.showImagePreview {
-                            DispatchQueue.main.async {
-                                withAnimation {
-                                    viewModel.showImagePreview = false
-                                }
-                            }
-                        }
                     viewModel.changeDirectory(id: directoryID)
                     viewModel.getContent(folderId: directoryID)
                     viewModel.showImagePreview = false
@@ -97,6 +90,20 @@ struct ContentListView: View {
                                         viewModel.isSelectOptionOn = false
                                     }
                                     // TODO: add method group by metadata
+                                    Menu ("Metadata") {
+                                        Button("Camera Model") {
+                                            viewModel.groupContent(by: "Metadata.cameraModel")
+                                            viewModel.unselectAll()
+                                            viewModel.isSelectOptionOn = false
+                                        }
+                                        Button("Color Space") {
+                                            viewModel.groupContent(by: "Metadata.colorSpace")
+                                            viewModel.unselectAll()
+                                            viewModel.isSelectOptionOn = false
+                                        }
+                                        
+                                        
+                                    }
                                 }
                             }
                             .disabled(!viewModel.isGroupAvailable())

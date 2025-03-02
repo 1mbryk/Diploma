@@ -8,12 +8,6 @@ import os
 
 
 def handle_connection(ssl_client_socket: ssl.SSLSocket):
-    work_dir = f'content/{uuid.uuid4()}'
-    try:
-        os.mkdir(work_dir)
-    except Exception as e:
-        print(f'{colors().highlight("Failed to create directory", "red")}: {e}')
-
     print(colors().highlight("SSL Handshake successful", "green"))
 
     # Read the request line and headers
@@ -35,7 +29,7 @@ def handle_connection(ssl_client_socket: ssl.SSLSocket):
     # ? Expected body format
     # * {
     # *    "Type": "Group",
-    # *    "Method": "Face" | "Date" | "Metadata"
+    # *    "Method": "Face" | "Date" | "Metadata.<data>"
     # *    "AccessToken" : - Access token from Google OAuth
     # *    "CurrentDirectory" : - Current directory in Google Drive
     # *    "Content": - List of file ids
@@ -60,8 +54,7 @@ def handle_connection(ssl_client_socket: ssl.SSLSocket):
                     """
 
     body_data = json.loads(body_data.decode())
-    group_photos(body_data, work_dir)
+    group_photos(body_data)
     ssl_client_socket.send(http_response.encode())
 
-    remove_files(work_dir)
     ssl_client_socket.close()

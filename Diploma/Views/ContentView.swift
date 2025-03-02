@@ -9,9 +9,6 @@ struct ContentView: View {
         UITabBar.appearance().backgroundColor = UIColor.white
         self.viewModel = viewModel
         contentListViewModel = ContentListViewModel(user: viewModel.user)
-        contentListViewModel.refreshAccessToken()
-        
-        
     }
     var body: some View {
         TabView {
@@ -29,6 +26,7 @@ struct ContentView: View {
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
+        
 }
 
 #Preview {

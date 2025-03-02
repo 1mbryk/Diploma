@@ -1,15 +1,18 @@
 from Photos import Photos
 from GoogleManager import GoogleManager
-from utils import colors
+from utils import *
+import uuid
+import os
 
 
-def group_photos(body_data, work_dir):
+def group_photos(body_data):
     access_token = body_data["AccessToken"]
     current_dir = body_data["CurrentDirectory"]
     content = body_data["Content"]
     google_manager = GoogleManager(access_token)
     images: list[Photos]
     method, group_by = body_data["Method"].split('.')
+    work_dir = f'content/{uuid.uuid4()}'
 
     images = google_manager.get_images_data(content,
                                             work_dir,
@@ -19,12 +22,18 @@ def group_photos(body_data, work_dir):
     match method:
         # * FACE
         case "Face":
+            try:
+                os.mkdir(work_dir)
+            except Exception as e:
+                print(
+                    f'{colors().highlight("Failed to create directory", "red")}: {e}')
             images = google_manager.get_images_data(content,
                                                     work_dir,
                                                     get_images=True)
             for image in images:
                 image.save()
 
+            remove_files(work_dir)
             return
         # * DATE
         case "Date":

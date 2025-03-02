@@ -58,12 +58,17 @@ class ContentListViewModel : ObservableObject {
     // MARK: - Methods
     
     func changeDirectory(id: String) {
-        
-        // for debug!
-        // FIXME: nil after access token is expired
-        googleManager.getFileMetadata(fileId: id) { metadata in
-            self.metadata = metadata ?? Metadata(id: "", name: "Untitled", mimeType: "", createdTime: Date(), modifiedTime: Date())
-            self.currentDirectory = Content(id: id, name: self.metadata.name, type: "Folder", isSelected: false)
+        self.currentDirectory.name = ""
+        Task {
+            guard let filename = await googleManager.fetchFilename(id: id) else {
+                DispatchQueue.main.async {
+                    self.currentDirectory = Content(id: id, name: "Unknown", type: "Folder", isSelected: false)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.currentDirectory = Content(id: id, name: filename, type: "Folder", isSelected: false)
+            }
         }
     }
     
@@ -165,14 +170,18 @@ class ContentListViewModel : ObservableObject {
     }
     
     func getMetadata(id: String) {
-        self.refreshAccessToken()
-        googleManager.getFileMetadata(fileId: id) { metadata in
-            self.metadata = metadata!
-            
+        Task {
+            await self.refreshAccessToken()
+            guard let metadata = await googleManager.getFileMetadata(fileId: id) else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.metadata = metadata
+            }
         }
     }
     
-    func getContent(folderId: String? = nil ) {
+    func getContent(folderId: String? = nil) {
         print("⚙️ \(#function)")
         self.isLoading = true
         let id: String
@@ -181,15 +190,27 @@ class ContentListViewModel : ObservableObject {
         } else {
             id = folderId!
         }
-        self.refreshAccessToken()
-        self.content = []
-        self.googleManager.fetchFiles(inFolder: id) { files in
-            if files == nil {
-                print("files is nil")
-                return
+        Task {
+            await self.refreshAccessToken()
+            let files = await self.googleManager.fetchFiles(inFolder: id)
+            DispatchQueue.main.async {
+                self.parseFilesInfo(files: files)
+                self.isLoading = false
             }
-            
-            
+        }
+    }
+    
+    private func getContent(folderId: String? = nil) async {
+        print("⚙️ \(#function)")
+        let id: String
+        if folderId == nil {
+            id = self.currentDirectory.id
+        } else {
+            id = folderId!
+        }
+        await self.refreshAccessToken()
+        let files = await self.googleManager.fetchFiles(inFolder: id)
+        DispatchQueue.main.async {
             self.parseFilesInfo(files: files)
             self.isLoading = false
         }
@@ -245,14 +266,14 @@ class ContentListViewModel : ObservableObject {
     
     func createFolder(name: String) {
         self.isLoading = true
-        self.googleManager.createFolder(name: name, parentFolderId: currentDirectory.id) { error in
-            if error != nil {
-                
-                self.alertMessage = error!
-                self.showAlert = true
+        Task {
+            if await !self.googleManager.createFolder(name: name, parentFolderId: currentDirectory.id) {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Failed to create folder"
+                    self.showAlert = true
+                }
             }
-            self.getContent()
-            self.isLoading = false
+            await self.getContent()
         }
     }
     
@@ -278,19 +299,40 @@ class ContentListViewModel : ObservableObject {
     
     // MARK: - Helper methods
 
-        
     func refreshAccessToken() {
         if abs(Date().timeIntervalSince(user.accessTokenCreationDate!)) >= 3600 {
-            self.googleManager.refreshAccessToken() { newToken in
-                if (newToken != nil){
-                    self.user.setAccessToken(accessToken: newToken!)
+            Task {
+                guard let accessToken = await self.googleManager.refreshAccessToken() else {
+                    print("❌ Access token is nil")
+                    DispatchQueue.main.async {
+                        self.alertMessage = "Access token is null"
+                        self.showAlert = true
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.user.setAccessToken(accessToken: accessToken)
                     print("✅ Access token refreshed successfuly!")
                     self.user.save(storageURL: URL.documentsDirectory.appending(path: "login-info"))
-                } else {
-                    print("❌ Access token is nil")
+                }
+            }
+        }
+    }
+    
+    private func refreshAccessToken() async {
+        if abs(Date().timeIntervalSince(user.accessTokenCreationDate!)) >= 3600 {
+            guard let accessToken = await self.googleManager.refreshAccessToken() else {
+                print("❌ Access token is nil")
+                DispatchQueue.main.async {
                     self.alertMessage = "Access token is null"
                     self.showAlert = true
                 }
+                return
+            }
+            DispatchQueue.main.async {
+                self.user.setAccessToken(accessToken: accessToken)
+                print("✅ Access token refreshed successfuly!")
+                self.user.save(storageURL: URL.documentsDirectory.appending(path: "login-info"))
             }
         }
     }
@@ -314,6 +356,4 @@ class ContentListViewModel : ObservableObject {
         }
         self.content = new_content.sorted(by: {$0.type < $1.type})
     }
-    
-    
 }
