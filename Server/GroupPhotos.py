@@ -9,7 +9,14 @@ def group_photos(body_data, work_dir):
     content = body_data["Content"]
     google_manager = GoogleManager(access_token)
     images: list[Photos]
-    match body_data["Method"]:
+    method, group_by = body_data["Method"].split('.')
+
+    images = google_manager.get_images_data(content,
+                                            work_dir,
+                                            get_images=False)
+    folders: dict[str:str] = {}  # Folder name and folder id
+
+    match method:
         # * FACE
         case "Face":
             images = google_manager.get_images_data(content,
@@ -18,25 +25,28 @@ def group_photos(body_data, work_dir):
             for image in images:
                 image.save()
 
+            return
         # * DATE
         case "Date":
-            images = google_manager.get_images_data(content,
-                                                    work_dir,
-                                                    get_images=False)
-            folders: dict[str:str] = {}  # Folder name and folder id
-            for image in images:
-                date = image.createdTime.strftime("%d.%m.%Y")
-                if not folders.get(date):
-                    folder_id = google_manager.get_folder_id(date)
-                    if not folder_id:  # if not exist create
-                        folder_id = google_manager.create_folder(date,
-                                                                 current_dir)
-                    folders[date] = folder_id
-                google_manager.move_file(file_id=image.id,
-                                         parents_id=image.parents,
-                                         new_parent_id=folders[date])
+            group_by = 'date'
 
-        case "Metadata":
-            pass
         case _:
             pass
+
+    for image in images:
+        if group_by == 'date':
+            name = image.createdTime.strftime("%d.%m.%Y")
+        else:
+            name = image.imageMediaMetadata.get(group_by)
+            if not name:
+                continue
+
+        if not folders.get(name):
+            folder_id = google_manager.get_folder_id(name)
+            if not folder_id:  # if not exist create
+                folder_id = google_manager.create_folder(name,
+                                                         current_dir)
+            folders[name] = folder_id
+        google_manager.move_file(file_id=image.id,
+                                 parents_id=image.parents,
+                                 new_parent_id=folders[name])
