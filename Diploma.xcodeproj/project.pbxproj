@@ -34,8 +34,6 @@
 		E69912E82D70ACE000EA4134 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E52D70ACE000EA4134 /* LoginViewModel.swift */; };
 		E69912EF2D70ACFB00EA4134 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E92D70ACFA00EA4134 /* Content.swift */; };
 		E69912F02D70ACFB00EA4134 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EA2D70ACFA00EA4134 /* Metadata.swift */; };
-		E69912F12D70ACFB00EA4134 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EB2D70ACFA00EA4134 /* Stack.swift */; };
-		E69912F22D70ACFB00EA4134 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */; };
 		E69912F32D70ACFB00EA4134 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912ED2D70ACFA00EA4134 /* User.swift */; };
 		E69912FF2D70AD1100EA4134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69912F42D70AD1100EA4134 /* Preview Assets.xcassets */; };
 		E69913002D70AD1100EA4134 /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912F62D70AD1100EA4134 /* ChangeNameView.swift */; };
@@ -48,6 +46,8 @@
 		E69913072D70AD1100EA4134 /* SlidingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */; };
 		E69913092D70AD4100EA4134 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E69913082D70AD4100EA4134 /* GoogleSignIn */; };
 		E699130B2D70AD4100EA4134 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E699130A2D70AD4100EA4134 /* GoogleSignInSwift */; };
+		E699130F2D74851D00EA4134 /* ContentListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699130E2D74851D00EA4134 /* ContentListViewHeader.swift */; };
+		E69913112D7485B300EA4134 /* ContentListViewContentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69913102D7485B300EA4134 /* ContentListViewContentButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +98,6 @@
 		E69912E52D70ACE000EA4134 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E69912E92D70ACFA00EA4134 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		E69912EA2D70ACFA00EA4134 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		E69912EB2D70ACFA00EA4134 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E69912ED2D70ACFA00EA4134 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E69912F42D70AD1100EA4134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E69912F62D70AD1100EA4134 /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
@@ -110,6 +108,8 @@
 		E69912FB2D70AD1100EA4134 /* PreviewPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoView.swift; sourceTree = "<group>"; };
 		E69912FC2D70AD1100EA4134 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuView.swift; sourceTree = "<group>"; };
+		E699130E2D74851D00EA4134 /* ContentListViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewHeader.swift; sourceTree = "<group>"; };
+		E69913102D7485B300EA4134 /* ContentListViewContentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewContentButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,8 +244,6 @@
 			children = (
 				E69912E92D70ACFA00EA4134 /* Content.swift */,
 				E69912EA2D70ACFA00EA4134 /* Metadata.swift */,
-				E69912EB2D70ACFA00EA4134 /* Stack.swift */,
-				E69912EC2D70ACFA00EA4134 /* SwiftUIView.swift */,
 				E69912ED2D70ACFA00EA4134 /* User.swift */,
 			);
 			path = Entities;
@@ -262,17 +260,27 @@
 		E69912FE2D70AD1100EA4134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E69912F52D70AD1100EA4134 /* Preview Content */,
+				E69913122D74860A00EA4134 /* ContentListView */,
 				E69912F62D70AD1100EA4134 /* ChangeNameView.swift */,
-				E69912F72D70AD1100EA4134 /* ContentListView.swift */,
 				E69912F82D70AD1100EA4134 /* ContentView.swift */,
 				E69912F92D70AD1100EA4134 /* CreateFolderView.swift */,
 				E69912FA2D70AD1100EA4134 /* LoginView.swift */,
 				E69912FB2D70AD1100EA4134 /* PreviewPhotoView.swift */,
 				E69912FC2D70AD1100EA4134 /* ProfileView.swift */,
 				E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */,
+				E69912F52D70AD1100EA4134 /* Preview Content */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E69913122D74860A00EA4134 /* ContentListView */ = {
+			isa = PBXGroup;
+			children = (
+				E69912F72D70AD1100EA4134 /* ContentListView.swift */,
+				E69913102D7485B300EA4134 /* ContentListViewContentButton.swift */,
+				E699130E2D74851D00EA4134 /* ContentListViewHeader.swift */,
+			);
+			path = ContentListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,22 +436,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69913112D7485B300EA4134 /* ContentListViewContentButton.swift in Sources */,
 				E69912F02D70ACFB00EA4134 /* Metadata.swift in Sources */,
 				E69912E72D70ACE000EA4134 /* ContentListViewModel.swift in Sources */,
 				E69913012D70AD1100EA4134 /* ContentListView.swift in Sources */,
 				E69913042D70AD1100EA4134 /* LoginView.swift in Sources */,
-				E69912F22D70ACFB00EA4134 /* SwiftUIView.swift in Sources */,
 				E69913002D70AD1100EA4134 /* ChangeNameView.swift in Sources */,
 				E69911E42D70A99D00EA4134 /* DiplomaApp.swift in Sources */,
 				E69912772D70ABBF00EA4134 /* GoogleManager.swift in Sources */,
 				E69913052D70AD1100EA4134 /* PreviewPhotoView.swift in Sources */,
 				E69913062D70AD1100EA4134 /* ProfileView.swift in Sources */,
-				E69912F12D70ACFB00EA4134 /* Stack.swift in Sources */,
 				E69913032D70AD1100EA4134 /* CreateFolderView.swift in Sources */,
 				E69912E82D70ACE000EA4134 /* LoginViewModel.swift in Sources */,
 				E69912762D70ABBF00EA4134 /* SSLClient.swift in Sources */,
 				E69913022D70AD1100EA4134 /* ContentView.swift in Sources */,
 				E69912F32D70ACFB00EA4134 /* User.swift in Sources */,
+				E699130F2D74851D00EA4134 /* ContentListViewHeader.swift in Sources */,
 				E69913072D70AD1100EA4134 /* SlidingMenuView.swift in Sources */,
 				E69912EF2D70ACFB00EA4134 /* Content.swift in Sources */,
 			);
