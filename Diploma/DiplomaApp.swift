@@ -23,10 +23,7 @@ struct DiplomaApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                ViewSwitcher(viewModel: viewModel)
-                
-            }
+            ViewSwitcher(viewModel: viewModel)
         }
     }
 }

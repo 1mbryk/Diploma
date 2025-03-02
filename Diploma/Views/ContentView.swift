@@ -10,25 +10,24 @@ struct ContentView: View {
         self.viewModel = viewModel
         contentListViewModel = ContentListViewModel(user: viewModel.user)
         contentListViewModel.refreshAccessToken()
-
-
+        
+        
     }
     var body: some View {
-        NavigationStack{
-            TabView{
-                ProfileView(viewModel: viewModel)
-                    .tabItem{
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
-                // temporary
+        TabView {
+            ProfileView(viewModel: viewModel)
+                .tabItem{
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+            NavigationStack {
                 ContentListView(viewModel: contentListViewModel)
-                    .tabItem {
-                        Image(systemName: "folder")
-                        Text("Content")
-                    }
             }
-        }
+            .tabItem {
+                Image(systemName: "folder")
+                Text("Content")
+            }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
