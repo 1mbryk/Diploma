@@ -11,7 +11,7 @@ import os
 @main
 struct DiplomaApp: App {
     var user: User
-    @StateObject var viewModel: LoginViewModel
+    var viewModel: LoginViewModel
     
     init(){
         user = User()
