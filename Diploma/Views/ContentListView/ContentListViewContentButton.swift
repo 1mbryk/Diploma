@@ -80,8 +80,8 @@ extension ContentListView {
                 .buttonStyle(PlainButtonStyle())
                 
                 Menu {
-                    Button("Copy", systemImage: "doc.on.doc") { }
-                    Button("Rename", systemImage: "square.and.pencil") {
+                    Button(String(localized: "Copy", table: "General"), systemImage: "doc.on.doc") { }
+                    Button(String(localized: "Rename", table: "General"), systemImage: "square.and.pencil") {
                         viewModel.showChangeNameView = true
                         viewModel.currentContent = content.wrappedValue
                     }
@@ -90,7 +90,7 @@ extension ContentListView {
                         viewModel.deleteFile(id: content.wrappedValue.id)
                         
                     }, label: {
-                        Text("Delete")
+                        Text(String(localized: "Delete", table: "General"))
                         Image(systemName: "trash")
                     })
                     

@@ -44,7 +44,7 @@ class ContentListViewModel : ObservableObject {
     @Published var selectedPhotos: [PhotosPickerItem] = []
     @Published var alertMessage = ""
     private var cachedImages: [String: UIImage] = [:]
-    private var sslClient = SSLClient()
+    private var sslClient /*= SSLClient()*/ : SSLClient
     private var imageName = ""
     
     
@@ -53,6 +53,7 @@ class ContentListViewModel : ObservableObject {
     init(user: User) {
         self.user = user
         self.googleManager = GoogleManager(user: user)
+        self.sslClient = SSLClient()
     }
     
     // MARK: - Methods
@@ -151,6 +152,7 @@ class ContentListViewModel : ObservableObject {
             content[i].isSelected = false
         }
         self.selectedContent = []
+        self.SelectAll = false
     }
     
     func select(currentContent: Binding<Content>){
@@ -167,6 +169,7 @@ class ContentListViewModel : ObservableObject {
             content[i].isSelected = true
         }
         self.selectedContent = self.content
+        self.SelectAll = true
     }
     
     func getMetadata(id: String) {
@@ -238,6 +241,7 @@ class ContentListViewModel : ObservableObject {
         self.refreshAccessToken()
         let json: [String: Any] = [
             "Type": "Group",
+            "Drive": "Google",
             "Method": method,
             "AccessToken" : user.accessToken ?? "",
             "CurrentDirectory" : self.currentDirectory.id,
@@ -278,8 +282,8 @@ class ContentListViewModel : ObservableObject {
     }
     
     func uploadPhotos() {
-        for photo in self.selectedPhotos {
-            Task {
+        Task {
+            for photo in self.selectedPhotos {
                 if let photoData = try? await photo.loadTransferable(type: Data.self) {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd.MM.Y"
@@ -293,8 +297,11 @@ class ContentListViewModel : ObservableObject {
                     
                 }
             }
+            DispatchQueue.main.async {
+                self.selectedPhotos = []
+                self.getContent()
+            }
         }
-        self.selectedPhotos = []
     }
     
     // MARK: - Helper methods

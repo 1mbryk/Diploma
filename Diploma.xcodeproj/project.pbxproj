@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E680C28E2DD0FBCA00145B6B /* General.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E680C28D2DD0FBCA00145B6B /* General.xcstrings */; };
 		E69911E42D70A99D00EA4134 /* DiplomaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69911E32D70A99D00EA4134 /* DiplomaApp.swift */; };
 		E69911E82D70A99F00EA4134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69911E72D70A99F00EA4134 /* Assets.xcassets */; };
 		E69911EB2D70A99F00EA4134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69911EA2D70A99F00EA4134 /* Preview Assets.xcassets */; };
@@ -15,19 +16,13 @@
 		E69912012D70A99F00EA4134 /* DiplomaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912002D70A99F00EA4134 /* DiplomaUITestsLaunchTests.swift */; };
 		E69912762D70ABBF00EA4134 /* SSLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912752D70ABBF00EA4134 /* SSLClient.swift */; };
 		E69912772D70ABBF00EA4134 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912742D70ABBF00EA4134 /* GoogleManager.swift */; };
-		E699128F2D70AC0900EA4134 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E699128E2D70AC0900EA4134 /* Info.plist */; };
 		E69912AD2D70AC8500EA4134 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = E69912AC2D70AC8500EA4134 /* config.json */; };
 		E69912D72D70ACC400EA4134 /* ca.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912C92D70ACC400EA4134 /* ca.crt */; };
 		E69912D82D70ACC400EA4134 /* ca.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912CA2D70ACC400EA4134 /* ca.key */; };
-		E69912D92D70ACC400EA4134 /* ca.srl in Resources */ = {isa = PBXBuildFile; fileRef = E69912CB2D70ACC400EA4134 /* ca.srl */; };
 		E69912DA2D70ACC400EA4134 /* client_certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = E69912CC2D70ACC400EA4134 /* client_certificate.p12 */; };
 		E69912DB2D70ACC400EA4134 /* client.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912CD2D70ACC400EA4134 /* client.crt */; };
-		E69912DC2D70ACC400EA4134 /* client.csr in Resources */ = {isa = PBXBuildFile; fileRef = E69912CE2D70ACC400EA4134 /* client.csr */; };
-		E69912DD2D70ACC400EA4134 /* client.ext in Resources */ = {isa = PBXBuildFile; fileRef = E69912CF2D70ACC400EA4134 /* client.ext */; };
 		E69912DE2D70ACC400EA4134 /* client.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912D02D70ACC400EA4134 /* client.key */; };
 		E69912DF2D70ACC400EA4134 /* server.crt in Resources */ = {isa = PBXBuildFile; fileRef = E69912D12D70ACC400EA4134 /* server.crt */; };
-		E69912E02D70ACC400EA4134 /* server.csr in Resources */ = {isa = PBXBuildFile; fileRef = E69912D22D70ACC400EA4134 /* server.csr */; };
-		E69912E12D70ACC400EA4134 /* server.ext in Resources */ = {isa = PBXBuildFile; fileRef = E69912D32D70ACC400EA4134 /* server.ext */; };
 		E69912E22D70ACC400EA4134 /* server.key in Resources */ = {isa = PBXBuildFile; fileRef = E69912D42D70ACC400EA4134 /* server.key */; };
 		E69912E32D70ACC400EA4134 /* server.pem in Resources */ = {isa = PBXBuildFile; fileRef = E69912D52D70ACC400EA4134 /* server.pem */; };
 		E69912E72D70ACE000EA4134 /* ContentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69912E42D70ACE000EA4134 /* ContentListViewModel.swift */; };
@@ -68,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E680C28D2DD0FBCA00145B6B /* General.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = General.xcstrings; sourceTree = "<group>"; };
 		E69911E02D70A99D00EA4134 /* Diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69911E32D70A99D00EA4134 /* DiplomaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomaApp.swift; sourceTree = "<group>"; };
 		E69911E72D70A99F00EA4134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,15 +79,10 @@
 		E69912AC2D70AC8500EA4134 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		E69912C92D70ACC400EA4134 /* ca.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.crt; sourceTree = "<group>"; };
 		E69912CA2D70ACC400EA4134 /* ca.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.key; sourceTree = "<group>"; };
-		E69912CB2D70ACC400EA4134 /* ca.srl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.srl; sourceTree = "<group>"; };
 		E69912CC2D70ACC400EA4134 /* client_certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client_certificate.p12; sourceTree = "<group>"; };
 		E69912CD2D70ACC400EA4134 /* client.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.crt; sourceTree = "<group>"; };
-		E69912CE2D70ACC400EA4134 /* client.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.csr; sourceTree = "<group>"; };
-		E69912CF2D70ACC400EA4134 /* client.ext */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.ext; sourceTree = "<group>"; };
 		E69912D02D70ACC400EA4134 /* client.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = client.key; sourceTree = "<group>"; };
 		E69912D12D70ACC400EA4134 /* server.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.crt; sourceTree = "<group>"; };
-		E69912D22D70ACC400EA4134 /* server.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.csr; sourceTree = "<group>"; };
-		E69912D32D70ACC400EA4134 /* server.ext */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.ext; sourceTree = "<group>"; };
 		E69912D42D70ACC400EA4134 /* server.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.key; sourceTree = "<group>"; };
 		E69912D52D70ACC400EA4134 /* server.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.pem; sourceTree = "<group>"; };
 		E69912E42D70ACE000EA4134 /* ContentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentListViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +133,7 @@
 		E69911D72D70A99D00EA4134 = {
 			isa = PBXGroup;
 			children = (
+				E680C28D2DD0FBCA00145B6B /* General.xcstrings */,
 				E69912D62D70ACC400EA4134 /* keys */,
 				E69912AC2D70AC8500EA4134 /* config.json */,
 				E699128E2D70AC0900EA4134 /* Info.plist */,
@@ -215,15 +207,10 @@
 			children = (
 				E69912C92D70ACC400EA4134 /* ca.crt */,
 				E69912CA2D70ACC400EA4134 /* ca.key */,
-				E69912CB2D70ACC400EA4134 /* ca.srl */,
 				E69912CC2D70ACC400EA4134 /* client_certificate.p12 */,
 				E69912CD2D70ACC400EA4134 /* client.crt */,
-				E69912CE2D70ACC400EA4134 /* client.csr */,
-				E69912CF2D70ACC400EA4134 /* client.ext */,
 				E69912D02D70ACC400EA4134 /* client.key */,
 				E69912D12D70ACC400EA4134 /* server.crt */,
-				E69912D22D70ACC400EA4134 /* server.csr */,
-				E69912D32D70ACC400EA4134 /* server.ext */,
 				E69912D42D70ACC400EA4134 /* server.key */,
 				E69912D52D70ACC400EA4134 /* server.pem */,
 			);
@@ -373,6 +360,7 @@
 			knownRegions = (
 				en,
 				Base,
+				be,
 			);
 			mainGroup = E69911D72D70A99D00EA4134;
 			packageReferences = (
@@ -394,23 +382,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E69912E12D70ACC400EA4134 /* server.ext in Resources */,
 				E69912E32D70ACC400EA4134 /* server.pem in Resources */,
-				E69912DC2D70ACC400EA4134 /* client.csr in Resources */,
+				E680C28E2DD0FBCA00145B6B /* General.xcstrings in Resources */,
 				E69912DB2D70ACC400EA4134 /* client.crt in Resources */,
 				E69912DA2D70ACC400EA4134 /* client_certificate.p12 in Resources */,
 				E69912D82D70ACC400EA4134 /* ca.key in Resources */,
 				E69912DF2D70ACC400EA4134 /* server.crt in Resources */,
-				E69912DD2D70ACC400EA4134 /* client.ext in Resources */,
 				E69912FF2D70AD1100EA4134 /* Preview Assets.xcassets in Resources */,
-				E69912E02D70ACC400EA4134 /* server.csr in Resources */,
 				E69912E22D70ACC400EA4134 /* server.key in Resources */,
 				E69911EB2D70A99F00EA4134 /* Preview Assets.xcassets in Resources */,
 				E69912DE2D70ACC400EA4134 /* client.key in Resources */,
 				E69912D72D70ACC400EA4134 /* ca.crt in Resources */,
 				E69911E82D70A99F00EA4134 /* Assets.xcassets in Resources */,
 				E69912AD2D70AC8500EA4134 /* config.json in Resources */,
-				E69912D92D70ACC400EA4134 /* ca.srl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E699128F2D70AC0900EA4134 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

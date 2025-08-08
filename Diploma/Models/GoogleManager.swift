@@ -35,31 +35,10 @@ class GoogleManager {
         return request
     }
     
-    /// Performs a network request and handles JSON parsing.
-    private func performDataTask<T: Decodable>(request: URLRequest, decodingType: T.Type, completion: @escaping (T?) -> Void) {
-        // ⚠️ DEPRECATED
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                print("Network error: \(error?.localizedDescription ?? "Unknown error")")
-                completion(nil)
-                return
-            }
-            do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(decodedData)
-                }
-            } catch {
-                print("JSON parsing error: \(error.localizedDescription)")
-                completion(nil)
-            }
-        }.resume()
-    }
-    
     private func performDataTask<T: Decodable>(request: URLRequest, decodingType: T.Type) async -> T? {
         let decodedData: T
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, _) = try await URLSession.shared.data(for: request)
             decodedData = try JSONDecoder().decode(decodingType, from: data)
             
         } catch {
@@ -111,7 +90,6 @@ class GoogleManager {
                 print("Error: Invalid response from Google Drive")
                 return nil
             }
-            let decodedData = String(data:data, encoding: .utf8)
             let result = try JSONDecoder().decode([String: String].self, from: data)
             return result["name"]
         } catch {
@@ -198,40 +176,6 @@ class GoogleManager {
         }.resume()
     }
     
-    func createFolder(name: String, parentFolderId: String?, completion: @escaping (_ error: String?) -> Void) {
-        let url = URL(string: "\(baseURL)")!
-        
-        var folderMetadata: [String: Any] = [
-            "name": name,
-            "mimeType": "application/vnd.google-apps.folder"
-        ]
-        
-        if let parentFolderId = parentFolderId {
-            folderMetadata["parents"] = [parentFolderId]
-        }
-        
-        guard let jsonBody = try? JSONSerialization.data(withJSONObject: folderMetadata, options: []) else {
-            print("❌ Error creating JSON")
-            completion("Failed to create folder")
-            return
-        }
-        
-        var request = createAuthorizedRequest(url: url, method: "POST", body: jsonBody)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")  // Ensure proper header
-        
-        performDataTask(request: request, decodingType: [String: String].self) { response in
-            let folderId = response?["id"]
-            if let folderId = folderId {
-                print("✅ Folder created with ID: \(folderId)")
-                completion(nil)
-            } else {
-                print("❌ Failed to create folder")
-                completion("Failed to create folder")
-
-            }
-        }
-    }
-    
     func createFolder(name: String, parentFolderId: String?) async -> Bool {
         let url = URL(string: baseURL)!
         
@@ -262,8 +206,7 @@ class GoogleManager {
             
         }
     }
-    
-    
+        
     func uploadPhoto(imageData: Data, fileName: String, folderId: String, completion: @escaping (_ error: String?) -> Void) {
         let mimeType: String
         if fileName.hasSuffix(".jpg") || fileName.hasSuffix(".jpeg"){

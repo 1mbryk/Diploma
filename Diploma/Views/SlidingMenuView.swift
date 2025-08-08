@@ -23,35 +23,35 @@ struct SlidingMenuView: View {
                 VStack {
                     VStack (alignment: .leading, spacing: 10) {
                         VStack (alignment: .leading, spacing: 2) {
-                            Text("Name:")
+                            Text("\(String(localized: "FileName", table: "General")):")
                                 .font(.caption)
                                 .fontWeight(.thin)
                             Text(viewModel.metadata.name)
                         }
                         VStack (alignment: .leading, spacing: 2) {
-                            Text("Creation date:")
+                            Text("\(String(localized: "FileCreationDate", table: "General")):")
                                 .font(.caption)
                                 .fontWeight(.thin)
-                            Text("\(viewModel.metadata.createdTime)")
+                            Text(viewModel.metadata.getCreatedTime())
                         }
                         VStack (alignment: .leading, spacing: 2) {
-                            Text("Modifition date:")
+                            Text("\(String(localized: "FileModificationDate", table: "General")):")
                                 .font(.caption)
                                 .fontWeight(.thin)
-                            Text("\(viewModel.metadata.modifiedTime)")
+                            Text(viewModel.metadata.getModifiedTime())
                             
                         }
                         
                          if viewModel.metadata.mimeType != "Folder" {
                             VStack (alignment: .leading, spacing: 2) {
-                                Text("Size:")
+                                Text("\(String(localized: "FileSize", table: "General")):")
                                     .font(.caption)
                                     .fontWeight(.thin)
-                                Text("\(viewModel.metadata.size ?? 0)")
+                                Text("\(viewModel.metadata.size ?? 0) Kb")
                             }
                         }
                         VStack (alignment: .leading, spacing: 2) {
-                            Text("Type:")
+                            Text("\(String(localized: "FileType", table: "General")):")
                                 .font(.caption)
                                 .fontWeight(.thin)
                             Text(viewModel.metadata.mimeType)

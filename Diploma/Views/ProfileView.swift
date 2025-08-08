@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import Foundation
 
 struct EmptyImageView: View{
     @Binding var show: Bool
@@ -39,10 +40,11 @@ struct NameView: View {
     @Binding var show: Bool
     @State var name: String?
     @State var email: String?
+
     
     var body: some View {
         VStack(alignment: .leading){
-            Text(name ?? "Unknown")
+            Text(name ?? String(localized:"Unknown", table: "General"))
                 .bold()
                 .font(.largeTitle)
                 .foregroundStyle(show ? .white : .black)
@@ -71,15 +73,15 @@ struct ProfileView: View {
         }){
             HStack{
                 Image(systemName: "rectangle.portrait.and.arrow.forward")
-                Text("Log Out")
+                Text(String(localized: "LogOut", table: "General"))
             }
             
         }.confirmationDialog(
-            "Are you sure?",
+            String(localized: "Are you sure?", table: "General"),
             isPresented: $isSignOut,
             titleVisibility: .visible
         ) {
-            Button("Yes", role: .destructive) {
+            Button(String(localized: "Yes", table: "General"), role: .destructive) {
                 DispatchQueue.main.async {
                     Task {
                         viewModel.signOut()
@@ -87,7 +89,7 @@ struct ProfileView: View {
                 }
             }
             
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Cancel", table: "General"), role: .cancel) {}
         }
     }
     
@@ -108,7 +110,6 @@ struct ProfileView: View {
                                                                                             ImageRenderer(content: Rectangle()
                                                                                                 .fill(Color.red)
                                                                                                 .frame(width: 200, height: 200)).uiImage!))
-                                        //                                        ProfileImageView(show: $show, profileImage: Image(systemName: "person.fill"))
                                     }
                                 }
                             }

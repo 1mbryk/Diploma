@@ -5,7 +5,7 @@ struct ContentListView: View {
     let MAX_FILENAME_LEN = 24
     
     @StateObject var viewModel: ContentListViewModel
-    //    @ObservedObject var viewModel: ContentListViewModel
+//        @ObservedObject var viewModel: ContentListViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var directoryID = "root"
     
@@ -25,7 +25,7 @@ struct ContentListView: View {
                                     .font(.largeTitle)
                                     .foregroundColor(.gray)
                                 
-                                Text("Folder is empty")
+                                Text(NSLocalizedString("EmptyFolder", comment: ""))
                                     .fontWeight(.light)
                                     .foregroundColor(.gray)
                                     .multilineTextAlignment(.center)
@@ -77,26 +77,26 @@ struct ContentListView: View {
                 if viewModel.isSelectOptionOn {
                     VStack {
                         HStack{
-                            Menu("Group by") {
-                                Section("Group by") {
-                                    Button("Faces") {
+                            Menu(String(localized: "GroupBy", table: "General")) {
+                                Section(String(localized: "GroupBy", table:  "General")) {
+                                    Button(String(localized:"Faces", table:  "General")) {
                                         viewModel.groupContent(by: "Face")
                                         viewModel.unselectAll()
                                         viewModel.isSelectOptionOn = false
                                     }
-                                    Button("Date") {
+                                    Button(String(localized:"Date", table: "General")) {
                                         viewModel.groupContent(by: "Date")
                                         viewModel.unselectAll()
                                         viewModel.isSelectOptionOn = false
                                     }
                                     // TODO: add method group by metadata
-                                    Menu ("Metadata") {
-                                        Button("Camera Model") {
+                                    Menu (String(localized: "Metadata", table: "General")) {
+                                        Button(String(localized: "Metadata", table: "General")) {
                                             viewModel.groupContent(by: "Metadata.cameraModel")
                                             viewModel.unselectAll()
                                             viewModel.isSelectOptionOn = false
                                         }
-                                        Button("Color Space") {
+                                        Button(String(localized: "ColorSpace", table: "General")) {
                                             viewModel.groupContent(by: "Metadata.colorSpace")
                                             viewModel.unselectAll()
                                             viewModel.isSelectOptionOn = false
@@ -108,7 +108,7 @@ struct ContentListView: View {
                             }
                             .disabled(!viewModel.isGroupAvailable())
                             Spacer()
-                            Text("Select items")
+                            Text(String(localized: "SelectItems", table: "General"))
                             Spacer()
                             Button("", systemImage: "trash", action: {viewModel.deleteSelectedFiles()})
                         }

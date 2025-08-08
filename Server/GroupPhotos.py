@@ -1,5 +1,6 @@
 from Photos import Photos
 from GoogleManager import GoogleManager
+from group_faces import *
 from utils import *
 import uuid
 import os
@@ -11,7 +12,11 @@ def group_photos(body_data):
     content = body_data["Content"]
     google_manager = GoogleManager(access_token)
     images: list[Photos]
-    method, group_by = body_data["Method"].split('.')
+    try:
+        method, group_by = body_data["Method"].split('.')
+    except:
+        method = body_data['Method']
+
     work_dir = f'content/{uuid.uuid4()}'
 
     images = google_manager.get_images_data(content,
@@ -32,6 +37,15 @@ def group_photos(body_data):
                                                     get_images=True)
             for image in images:
                 image.save()
+
+            persons = group_faces(images)
+
+            for i, person in enumerate(persons):
+                folder_id = google_manager.create_folder(
+                    f'Person {i}', current_dir)
+                for photo in person:
+                    google_manager.move_file(
+                        photo.id, photo.parents, folder_id)
 
             remove_files(work_dir)
             return

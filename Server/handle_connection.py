@@ -1,10 +1,7 @@
 from utils import *
-from GoogleManager import GoogleManager
 from GroupPhotos import *
 import ssl
 import json
-import uuid
-import os
 
 
 def handle_connection(ssl_client_socket: ssl.SSLSocket):
@@ -36,8 +33,8 @@ def handle_connection(ssl_client_socket: ssl.SSLSocket):
     # * }
 
     formatted_headers = headers.replace("\n", "\n\t")
-    print(f"{colors().highlight('Received Headers:','blue')}\n\t{formatted_headers}")
-    print(f"{colors().highlight('Received Body: ','blue')}{body_data.decode('utf-8')}")
+    print(f"{colors().highlight('Received Headers:', 'blue')}\n\t{formatted_headers}")
+    print(f"{colors().highlight('Received Body: ', 'blue')}{body_data.decode('utf-8')}")
 
     response_body = json.dumps(
         {

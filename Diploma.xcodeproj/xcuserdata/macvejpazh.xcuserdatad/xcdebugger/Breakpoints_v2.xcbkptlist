@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FD9320DB-2D0A-47BB-A1C7-DE5A7F7857BB"
-            shouldBeEnabled = "Yes"
+            uuid = "AC80D7F1-8051-452B-B70F-96BD1F867E73"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Diploma/Models/GoogleManager.swift"
+            filePath = "Diploma/ViewModels/ContentListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "downloadImage(from:)"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "getMetadata(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

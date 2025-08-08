@@ -11,12 +11,18 @@ struct LoginView: View {
         Button(action:{
             viewModel.handleSignIn()
         }){
-            Image(.google)
-                .resizable()
-                .scaledToFit()
-                .frame(width: CGFloat(20))
-            Text("Sign in with Google")
+            HStack {
+                Image(.google)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: CGFloat(20))
+                Text(String(localized:"SignInWithGoogle", table: "General"))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    
+            }
         }
+        .frame(alignment: .center)
         .buttonStyle(.bordered)
     }
     
@@ -27,8 +33,8 @@ struct LoginView: View {
 //            } else {
             VStack{
                 SignInWithGoogleButton()
-                    .frame(width: 200, height: 50)
-                Toggle("Stay logged in", isOn: $viewModel.stayLoggedIn)
+                    .frame(height: 50)
+                Toggle(String(localized: "StayLoggedIn", table: "General"), isOn: $viewModel.stayLoggedIn)
                     .padding(.horizontal, 110)
                     .tint(Color(.black))
                 

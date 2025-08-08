@@ -32,21 +32,21 @@ struct CreateFolderView: View {
 
                 VStack(spacing: 25) {
                     Form {
-                        TextField("Enter folder name", text: $name)
+                        TextField(String(localized: "EnterNewName", table: "General"), text: $name)
                 
                     }
                     .scrollContentBackground(.hidden)
                     .frame(height: 80)
 
                     HStack(spacing: 80) {
-                        Button("Cancel", role: .destructive, action: {
+                        Button(String(localized: "Cancel", table: "General"), role: .destructive, action: {
                             withAnimation {
                                 viewModel.showCreateFolderView = false
                             }
                         })
                         .clipShape(RoundedRectangle(cornerRadius: 5))
 
-                        Button("Confirm", action: {
+                        Button(String(localized:"Confirm", table: "General"), action: {
                             withAnimation {
                                 viewModel.createFolder(name: name)
                                 viewModel.showCreateFolderView = false

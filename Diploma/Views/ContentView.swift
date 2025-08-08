@@ -15,14 +15,14 @@ struct ContentView: View {
             ProfileView(viewModel: viewModel)
                 .tabItem{
                     Image(systemName: "person")
-                    Text("Profile")
+                    Text(String(localized: "Profile", table: "General"))
                 }
             NavigationStack {
                 ContentListView(viewModel: contentListViewModel)
             }
             .tabItem {
                 Image(systemName: "folder")
-                Text("Content")
+                Text(String(localized: "Content", table: "General"))
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -32,3 +32,4 @@ struct ContentView: View {
 #Preview {
     ContentView(viewModel: LoginViewModel(user: User()))
 }
+    

@@ -7,23 +7,7 @@ struct Metadata: Codable {
     var size: Int?
     var mimeType: String
     
-//    struct ImageMediaMetadata: Codable {
-//        var width: Int
-//        var height: Int
-//        var cameraMake: String?
-//        var cameraModel: String?
-//        var exposureTime: Float?
-//        var aperture: Float?
-//        var focalLength: Float?
-//        var isoSpeed: Int?
-//        var colorSpace: String?
-//        var whiteBalance: String?
-//        var lens: String?
-//    }
-//    var imageMediaMetadata: ImageMediaMetadata?
-    
-    // TODO: extend metadata to [width, height, cameraMake, cameraModel, exposureTime, aperture, focalLength, isoSpeed, colorSpace, whiteBalance, lens]
-    init(id: String, name: String, mimeType: String, createdTime: Date,modifiedTime: Date, size: Int? = nil/*, imageMediaMetadata: ImageMediaMetadata? = nil*/) {
+    init(id: String, name: String, mimeType: String, createdTime: Date,modifiedTime: Date, size: Int? = nil) {
         self.id = id
         self.name = name
         self.modifiedTime = modifiedTime
@@ -40,14 +24,16 @@ struct Metadata: Codable {
             self.mimeType = "Other"
             
         }
-//        self.imageMediaMetadata = imageMediaMetadata
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.size = try? container.decode(Int.self, forKey: .size)
+        if let size = try? container.decode(String.self, forKey: .size) {
+            self.size = (Int(size) ?? 0 ) / 1000
+        }
+        
         
         let rawMimeType = try container.decode(String.self, forKey: .mimeType)
         switch rawMimeType {
@@ -72,6 +58,21 @@ struct Metadata: Codable {
         } else {
             throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.createdTime, CodingKeys.modifiedTime], debugDescription: "Invalid date format"))
         }
-//        self.imageMediaMetadata = ImageMediaMetadata(from: try container.decode(ImageMediaMetadata.self, forKey: .imageMediaMetadata))
     }
+    
+    func getCreatedTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        
+        return dateFormatter.string(from: self.createdTime)
+    }
+    
+    func getModifiedTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        
+        return dateFormatter.string(from: self.modifiedTime)
+        
+    }
+
 }

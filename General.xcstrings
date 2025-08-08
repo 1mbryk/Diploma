@@ -52,13 +52,18 @@
         }
       }
     },
-    "Are You Shure?" : {
-      "extractionState" : "manual",
+    "Are you sure?" : {
       "localizations" : {
         "be" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Вы ўпэўнены?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure?"
           }
         }
       }
@@ -97,6 +102,23 @@
         }
       }
     },
+    "ChangeName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Змяніць назву"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Name "
+          }
+        }
+      }
+    },
     "ColorSpace" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -110,6 +132,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color Space"
+          }
+        }
+      }
+    },
+    "Confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пацвердзіць"
           }
         }
       }
@@ -137,7 +170,7 @@
         "be" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Зкапіяваць"
+            "value" : "Cкапіяваць"
           }
         },
         "en" : {
@@ -206,6 +239,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Увядзіце назву тэчкі"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter folder name"
+          }
+        }
+      }
+    },
+    "EnterNewName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увядзіце новую назву"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter new name"
+          }
+        }
+      }
+    },
+    "Face" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Твар"
           }
         }
       }
@@ -371,6 +438,12 @@
             "state" : "translated",
             "value" : "Не"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
         }
       }
     },
@@ -501,6 +574,12 @@
             "state" : "translated",
             "value" : "Невядомы"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
         }
       }
     },
@@ -528,6 +607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Так"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
           }
         }
       }

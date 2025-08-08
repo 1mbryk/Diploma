@@ -15,6 +15,7 @@ class LoginViewModel: ObservableObject {
     
     
     init(user : User) {
+        print("⚙️ LoginViewModel init")
         do {
             let data = try Data(contentsOf: storageURL)
             
@@ -30,7 +31,7 @@ class LoginViewModel: ObservableObject {
         }
         self.user = user
     }
-        
+              
     func handleSignIn() {
         guard let rootViewController = UIApplication.shared.connectedScenes
             .compactMap({ ($0 as? UIWindowScene)?.keyWindow?.rootViewController }).first else {

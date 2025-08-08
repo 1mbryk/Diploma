@@ -6,13 +6,12 @@ extension ContentListView {
         VStack {
             if (viewModel.isSelectOptionOn) {
                 HStack {
-                    Button(viewModel.SelectAll ? "Unselect all" : "Select All"){
+                    Button(viewModel.SelectAll ? String(localized: "UnselectAll", table: "General") : String(localized: "SelectAll", table: "General")){
                         if viewModel.SelectAll{
                             viewModel.unselectAll()
                         } else {
                             viewModel.selectAll()
                         }
-                        viewModel.SelectAll.toggle()
                     }
                     Spacer()
                     Button("Cancel"){
@@ -39,7 +38,7 @@ extension ContentListView {
                     Spacer()
                     // MARK: - POP-UP MENU
                     Menu("", systemImage: "ellipsis.circle") {
-                        Button("Select", systemImage: "checkmark.circle"){
+                        Button(String(localized: "Select", table: "General"), systemImage: "checkmark.circle"){
                             if viewModel.isSelectOptionOn {
                                 viewModel.unselectAll()
                             }
@@ -47,9 +46,9 @@ extension ContentListView {
                                 viewModel.isSelectOptionOn = true
                             }
                         }
-                        Menu ("Add", systemImage: "plus.circle"){
-                            Button("Folder") { viewModel.showCreateFolderView = true}
-                            Button("Image") {viewModel.showPhotosPicker = true}
+                        Menu (String(localized: "Add", table: "General"), systemImage: "plus.circle"){
+                            Button(String(localized: "AddFolder", table: "General")) { viewModel.showCreateFolderView = true}
+                            Button(String(localized: "AddPhoto", table: "General")) {viewModel.showPhotosPicker = true}
                         }
                     }
                 }
