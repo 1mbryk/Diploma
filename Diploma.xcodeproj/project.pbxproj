@@ -43,6 +43,7 @@
 		E699130B2D70AD4100EA4134 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E699130A2D70AD4100EA4134 /* GoogleSignInSwift */; };
 		E699130F2D74851D00EA4134 /* ContentListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699130E2D74851D00EA4134 /* ContentListViewHeader.swift */; };
 		E69913112D7485B300EA4134 /* ContentListViewContentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69913102D7485B300EA4134 /* ContentListViewContentButton.swift */; };
+		E6F15D9F2E49F104004C20DE /* ReadmeSources in Resources */ = {isa = PBXBuildFile; fileRef = E6F15D9E2E49F104004C20DE /* ReadmeSources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		E69912FD2D70AD1100EA4134 /* SlidingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuView.swift; sourceTree = "<group>"; };
 		E699130E2D74851D00EA4134 /* ContentListViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewHeader.swift; sourceTree = "<group>"; };
 		E69913102D7485B300EA4134 /* ContentListViewContentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListViewContentButton.swift; sourceTree = "<group>"; };
+		E6F15D9E2E49F104004C20DE /* ReadmeSources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReadmeSources; sourceTree = "<group>"; };
+		E6F15DA02E49F12B004C20DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 		E69911D72D70A99D00EA4134 = {
 			isa = PBXGroup;
 			children = (
+				E6F15DA02E49F12B004C20DE /* README.md */,
+				E6F15D9E2E49F104004C20DE /* ReadmeSources */,
 				E680C28D2DD0FBCA00145B6B /* General.xcstrings */,
 				E69912D62D70ACC400EA4134 /* keys */,
 				E69912AC2D70AC8500EA4134 /* config.json */,
@@ -393,6 +398,7 @@
 				E69911EB2D70A99F00EA4134 /* Preview Assets.xcassets in Resources */,
 				E69912DE2D70ACC400EA4134 /* client.key in Resources */,
 				E69912D72D70ACC400EA4134 /* ca.crt in Resources */,
+				E6F15D9F2E49F104004C20DE /* ReadmeSources in Resources */,
 				E69911E82D70A99F00EA4134 /* Assets.xcassets in Resources */,
 				E69912AD2D70AC8500EA4134 /* config.json in Resources */,
 			);
